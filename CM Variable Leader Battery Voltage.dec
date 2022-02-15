@@ -1,0 +1,16 @@
+; Ensemble Number from Variable Leader
+0080,3,2,1,0,+		; Ensemble Number
+0080,12,1,65536,0	; Ensemble Number (Most Significant Byte)
+;
+; Date & Time from Variable Leader
+0080,5,1,1,0		; Year
+0080,6,1,1,0		; Month
+0080,7,1,1,0		; Day
+0080,8,1,1,0		; Hour
+0080,9,1,1,0		; Minute
+0080,10,1,1,0		; Second
+;
+;  Battery Voltage  from Variable Leader
+0080,36,4,1,2		; Battery
+$L
+

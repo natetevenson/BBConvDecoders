@@ -1,0 +1,5 @@
+; Fixed Leader Decoder File
+0000,55,4	;Instrument serial number for firmware that supports it(WH 16.30, Nav 9.20, SP 31.04, & CM 2.09)
+;		  March 2007 DM
+;  The following produces a CR/LF in the ASCII file
+$L

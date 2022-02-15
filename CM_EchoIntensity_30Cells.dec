@@ -1,0 +1,78 @@
+; This Decoder extracts 30 cells of Echo Intensity data from the raw binary file
+;
+; Date & Time from Variable Leader
+0080,5,1,1,0		; Year
+0080,6,1,1,0		; Month
+0080,7,1,1,0		; Day
+0080,8,1,1,0		; Hour
+0080,9,1,1,0		; Minute
+0080,10,1,1,0		; Second
+;
+; Ensemble Number from Variable Leader
+0080,3,2,1,0,+		; Ensemble Number
+0080,12,1,65536,0	; Ensemble Number (Most Significant Byte)
+;
+; Velocity Data
+;$P0000,10,1,4,"1-255"       ; Starting Profile
+0300,3,1,1,0                ; Echo Intensity Beam 1 Data (Cell 1)
+0300,4,1,1,0                ; Echo Intensity Beam 2 Data (Cell 1)
+0300,7,1,1,0                ; Echo Intensity Beam 1 Data (Cell 2)
+0300,8,1,1,0                ; Echo Intensity Beam 2 Data (Cell 2)
+0300,11,1,1,0               ; Echo Intensity Beam 1 Data (Cell 3)
+0300,12,1,1,0               ; Echo Intensity Beam 2 Data (Cell 3)
+0300,15,1,1,0               ; Echo Intensity Beam 1 Data (Cell 4)
+0300,16,1,1,0               ; Echo Intensity Beam 2 Data (Cell 4)
+0300,19,1,1,0               ; Echo Intensity Beam 1 Data (Cell 5)
+0300,20,1,1,0               ; Echo Intensity Beam 2 Data (Cell 5)
+0300,23,1,1,0               ; Echo Intensity Beam 1 Data (Cell 6)
+0300,24,1,1,0               ; Echo Intensity Beam 2 Data (Cell 6)
+0300,27,1,1,0               ; Echo Intensity Beam 1 Data (Cell 7)
+0300,28,1,1,0               ; Echo Intensity Beam 2 Data (Cell 7)
+0300,31,1,1,0               ; Echo Intensity Beam 1 Data (Cell 8)
+0300,32,1,1,0               ; Echo Intensity Beam 2 Data (Cell 8)
+0300,35,1,1,0               ; Echo Intensity Beam 1 Data (Cell 9)
+0300,36,1,1,0               ; Echo Intensity Beam 2 Data (Cell 9)
+0300,39,1,1,0               ; Echo Intensity Beam 1 Data (Cell 10)
+0300,40,1,1,0               ; Echo Intensity Beam 2 Data (Cell 10)
+0300,43,1,1,0               ; Echo Intensity Beam 1 Data (Cell 11)
+0300,44,1,1,0               ; Echo Intensity Beam 2 Data (Cell 11)
+0300,47,1,1,0               ; Echo Intensity Beam 1 Data (Cell 12)
+0300,48,1,1,0               ; Echo Intensity Beam 2 Data (Cell 12)
+0300,51,1,1,0               ; Echo Intensity Beam 1 Data (Cell 13)
+0300,52,1,1,0               ; Echo Intensity Beam 2 Data (Cell 13)
+0300,55,1,1,0               ; Echo Intensity Beam 1 Data (Cell 14)
+0300,56,1,1,0               ; Echo Intensity Beam 2 Data (Cell 14)
+0300,59,1,1,0               ; Echo Intensity Beam 1 Data (Cell 15)
+0300,60,1,1,0               ; Echo Intensity Beam 2 Data (Cell 15)
+0300,63,1,1,0               ; Echo Intensity Beam 1 Data (Cell 16)
+0300,64,1,1,0               ; Echo Intensity Beam 2 Data (Cell 16)
+0300,67,1,1,0               ; Echo Intensity Beam 1 Data (Cell 17)
+0300,68,1,1,0               ; Echo Intensity Beam 2 Data (Cell 17)
+0300,71,1,1,0               ; Echo Intensity Beam 1 Data (Cell 18)
+0300,72,1,1,0               ; Echo Intensity Beam 2 Data (Cell 18)
+0300,75,1,1,0               ; Echo Intensity Beam 1 Data (Cell 19)
+0300,76,1,1,0               ; Echo Intensity Beam 2 Data (Cell 19)
+0300,79,1,1,0               ; Echo Intensity Beam 1 Data (Cell 20)
+0300,80,1,1,0               ; Echo Intensity Beam 2 Data (Cell 20)
+0300,83,1,1,0               ; Echo Intensity Beam 1 Data (Cell 21)
+0300,84,1,1,0               ; Echo Intensity Beam 2 Data (Cell 21)
+0300,87,1,1,0               ; Echo Intensity Beam 1 Data (Cell 22)
+0300,88,1,1,0               ; Echo Intensity Beam 2 Data (Cell 22)
+0300,91,1,1,0               ; Echo Intensity Beam 1 Data (Cell 23)
+0300,92,1,1,0               ; Echo Intensity Beam 2 Data (Cell 23)
+0300,95,1,1,0               ; Echo Intensity Beam 1 Data (Cell 24)
+0300,96,1,1,0               ; Echo Intensity Beam 2 Data (Cell 24)
+0300,99,1,1,0               ; Echo Intensity Beam 1 Data (Cell 25)
+0300,100,1,1,0               ; Echo Intensity Beam 2 Data (Cell 25)
+0300,103,1,1,0               ; Echo Intensity Beam 1 Data (Cell 26)
+0300,104,1,1,0               ; Echo Intensity Beam 2 Data (Cell 26)
+0300,107,1,1,0               ; Echo Intensity Beam 1 Data (Cell 27)
+0300,108,1,1,0               ; Echo Intensity Beam 2 Data (Cell 27)
+0300,111,1,1,0               ; Echo Intensity Beam 1 Data (Cell 28)
+0300,112,1,1,0               ; Echo Intensity Beam 2 Data (Cell 28)
+0300,115,1,1,0               ; Echo Intensity Beam 1 Data (Cell 29)
+0300,116,1,1,0               ; Echo Intensity Beam 2 Data (Cell 29)
+0300,119,1,1,0               ; Echo Intensity Beam 1 Data (Cell 30)
+0300,120,1,1,0               ; Echo Intensity Beam 2 Data (Cell 30)
+;  The following produces a CR/LF in the ASCII file
+$L

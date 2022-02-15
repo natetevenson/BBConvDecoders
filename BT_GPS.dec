@@ -1,0 +1,29 @@
+;  Navigation Decode File - NB/this GPS data comes from the Bottom Tracking output and is not used by WinRiver
+;  Binary Fixed & Variable Leader Decode File
+0080,3,2	; Ensemble Number
+0080,12,1	; Ensemble Number (Most Significant Byte)
+;
+;  Navigation Decoder File NB/this GPS data is not used by WinRiver
+0600,5,2	; GPS (GGA) Longitude LSB
+0600,47,-2,65536; GPS (GGA) Longitude MSB
+;  Longitude in degrees = add LSB to MSB then *180/2147483647 if positive East
+0600,13,4	; GPS (GGA) Latitude
+;  Latitude in degrees = decoder number*180/2147483647 if positive North
+0600,45,2	; GGA Altitude Data (m) x 10 +32678
+0600,49,2	; DBT
+0600,51,-2	; GGA East/West Vel (mm/s)
+0600,53,-2	; GGA North/South Vel (mm/s)
+0600,55,-2	; VTG East/West Vel (mm/s)
+0600,57,-2	; VTG North/South Vel (mm/s)
+0600,65,1	; GGA Quality 0=invalid, 1=GPS fix, 2=DGPS fix, 3=No Data, (RTK)
+0600,59,1	; GSA VDOP value
+0600,60,1	; GSA PDOP value
+0600,66,1	; GGA HDOP value x 10
+0600,61,1	; GSA # of Sattelites
+0600,67,1	; # of first GSA Sattelite Used
+0600,68,1	; # of second GSA Sattelite Used
+0600,69,1	; # of third GSA Sattelite Used
+0600,70,1	; # of fourth GSA Sattelite Used
+0600,63,1	; # of fifth GSA Sattelite Used
+0600,64,1	; # of sixth GSA Sattelite Used
+$L

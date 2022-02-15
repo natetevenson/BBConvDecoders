@@ -1,0 +1,78 @@
+; This Decoder extracts 30 cells of Correlation data from the raw binary file
+;
+; Date & Time from Variable Leader
+0080,5,1,1,0		; Year
+0080,6,1,1,0		; Month
+0080,7,1,1,0		; Day
+0080,8,1,1,0		; Hour
+0080,9,1,1,0		; Minute
+0080,10,1,1,0		; Second
+;
+; Ensemble Number from Variable Leader
+0080,3,2,1,0,+		; Ensemble Number
+0080,12,1,65536,0	; Ensemble Number (Most Significant Byte)
+;
+; Velocity Data
+;$P0000,10,1,4,"1-255"       ; Starting Profile
+0200,3,1,1,0                ; Correlation Beam 1 Data (Cell 1)
+0200,4,1,1,0                ; Correlation Beam 2 Data (Cell 1)
+0200,7,1,1,0                ; Correlation Beam 1 Data (Cell 2)
+0200,8,1,1,0                ; Correlation Beam 2 Data (Cell 2)
+0200,11,1,1,0               ; Correlation Beam 1 Data (Cell 3)
+0200,12,1,1,0               ; Correlation Beam 2 Data (Cell 3)
+0200,15,1,1,0               ; Correlation Beam 1 Data (Cell 4)
+0200,16,1,1,0               ; Correlation Beam 2 Data (Cell 4)
+0200,19,1,1,0               ; Correlation Beam 1 Data (Cell 5)
+0200,20,1,1,0               ; Correlation Beam 2 Data (Cell 5)
+0200,23,1,1,0               ; Correlation Beam 1 Data (Cell 6)
+0200,24,1,1,0               ; Correlation Beam 2 Data (Cell 6)
+0200,27,1,1,0               ; Correlation Beam 1 Data (Cell 7)
+0200,28,1,1,0               ; Correlation Beam 2 Data (Cell 7)
+0200,31,1,1,0               ; Correlation Beam 1 Data (Cell 8)
+0200,32,1,1,0               ; Correlation Beam 2 Data (Cell 8)
+0200,35,1,1,0               ; Correlation Beam 1 Data (Cell 9)
+0200,36,1,1,0               ; Correlation Beam 2 Data (Cell 9)
+0200,39,1,1,0               ; Correlation Beam 1 Data (Cell 10)
+0200,40,1,1,0               ; Correlation Beam 2 Data (Cell 10)
+0200,43,1,1,0               ; Correlation Beam 1 Data (Cell 11)
+0200,44,1,1,0               ; Correlation Beam 2 Data (Cell 11)
+0200,47,1,1,0               ; Correlation Beam 1 Data (Cell 12)
+0200,48,1,1,0               ; Correlation Beam 2 Data (Cell 12)
+0200,51,1,1,0               ; Correlation Beam 1 Data (Cell 13)
+0200,52,1,1,0               ; Correlation Beam 2 Data (Cell 13)
+0200,55,1,1,0               ; Correlation Beam 1 Data (Cell 14)
+0200,56,1,1,0               ; Correlation Beam 2 Data (Cell 14)
+0200,59,1,1,0               ; Correlation Beam 1 Data (Cell 15)
+0200,60,1,1,0               ; Correlation Beam 2 Data (Cell 15)
+0200,63,1,1,0               ; Correlation Beam 1 Data (Cell 16)
+0200,64,1,1,0               ; Correlation Beam 2 Data (Cell 16)
+0200,67,1,1,0               ; Correlation Beam 1 Data (Cell 17)
+0200,68,1,1,0               ; Correlation Beam 2 Data (Cell 17)
+0200,71,1,1,0               ; Correlation Beam 1 Data (Cell 18)
+0200,72,1,1,0               ; Correlation Beam 2 Data (Cell 18)
+0200,75,1,1,0               ; Correlation Beam 1 Data (Cell 19)
+0200,76,1,1,0               ; Correlation Beam 2 Data (Cell 19)
+0200,79,1,1,0               ; Correlation Beam 1 Data (Cell 20)
+0200,80,1,1,0               ; Correlation Beam 2 Data (Cell 20)
+0200,83,1,1,0               ; Correlation Beam 1 Data (Cell 21)
+0200,84,1,1,0               ; Correlation Beam 2 Data (Cell 21)
+0200,87,1,1,0               ; Correlation Beam 1 Data (Cell 22)
+0200,88,1,1,0               ; Correlation Beam 2 Data (Cell 22)
+0200,91,1,1,0               ; Correlation Beam 1 Data (Cell 23)
+0200,92,1,1,0               ; Correlation Beam 2 Data (Cell 23)
+0200,95,1,1,0               ; Correlation Beam 1 Data (Cell 24)
+0200,96,1,1,0               ; Correlation Beam 2 Data (Cell 24)
+0200,99,1,1,0               ; Correlation Beam 1 Data (Cell 25)
+0200,100,1,1,0               ; Correlation Beam 2 Data (Cell 25)
+0200,103,1,1,0               ; Correlation Beam 1 Data (Cell 26)
+0200,104,1,1,0               ; Correlation Beam 2 Data (Cell 26)
+0200,107,1,1,0               ; Correlation Beam 1 Data (Cell 27)
+0200,108,1,1,0               ; Correlation Beam 2 Data (Cell 27)
+0200,111,1,1,0               ; Correlation Beam 1 Data (Cell 28)
+0200,112,1,1,0               ; Correlation Beam 2 Data (Cell 28)
+0200,115,1,1,0               ; Correlation Beam 1 Data (Cell 29)
+0200,116,1,1,0               ; Correlation Beam 2 Data (Cell 29)
+0200,119,1,1,0               ; Correlation Beam 1 Data (Cell 30)
+0200,120,1,1,0               ; Correlation Beam 2 Data (Cell 30)
+;  The following produces a CR/LF in the ASCII file
+$L

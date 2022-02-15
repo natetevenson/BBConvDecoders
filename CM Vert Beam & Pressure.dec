@@ -1,0 +1,27 @@
+; Depth (Corrected & uncorrected Surface Track and pressure)
+; 
+0080,3,2,1,0,+		;Ensemble Number
+0080,12,1,65536,0	;Ensemble Number (Most Significant Byte)
+0080,5,1,1,0		;Year
+0080,6,1,1,0		;Month
+0080,7,1,1,0		;Day
+0080,8,1,1,0		;Hour
+0080,9,1,1,0		;Minute
+0080,10,1,1,0		;Second
+;  
+4000,3,4,0.0001,3		;Depth (Corrected Surface Track), start at byte 3, grab 4 bytes, convert from 0.1 mm to m, output to 3 decimals
+4000,7,4,0.0001,3		;Depth (Uncorrected Surface Track), start at byte 7, grab 4 bytes, convert from 0.1 mm to m, output to 3 decimals
+4000,11,1,1,3			;Evaluation Amplitude, units = counts
+4000,12,1,1,3			;Amplitude at the Surface, units = counts
+4000,13,1,1,3			;% Good of Surface Track, units = %
+4000,14,4,0.0001,3		;STD of Good Depths, start at byte 14, grab 4 bytes, convert from 0.1 mm to m, output to 3 decimals
+4000,18,4,0.0001,3		;Min Depth of Good Depths, start at byte 18, grab 4 bytes, convert from 0.1 mm to m, output to 3 decimals
+4000,22,4,0.0001,3		;Max Depth of Good Depths, start at byte 22, grab 4 bytes, convert from 0.1 mm to m, output to 3 decimals
+4000,26,4,0.0001,3		;Pressure Depth Correction, last good diff. between pressure depth and vert beam depth
+4000,30,4,0.0001,3		;Pressure (uncorrected), start at byte 30, grab 4 bytes, convert from 0.1 mm to m, output to 3 decimals
+4000,34,1,1,3			;% Good of Pressure Depth, units = %
+4000,35,4,0.0001,3		;STD of Good Depths based on corrected pressure, convert from 0.1 mm to m
+4000,39,4,0.0001,3		;Min depth of corrected pressure, converted from 0.1 mm to m
+4000,43,4,0.0001,3		;Max depth of corrected pressure, converted from 0.1 mm to m
+;
+$L

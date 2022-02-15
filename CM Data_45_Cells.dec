@@ -1,0 +1,137 @@
+; This Decoder extracts all pertinent information from the raw binary file
+; Depth (Corrected & uncorrected Surface Track and pressure)
+;
+0080,3,2,1,0,+		; Ensemble Number
+0080,12,1,65536,0	; Ensemble Number (Most Significant Byte)
+;
+; Date & Time from Variable Leader
+0080,5,1,1,0		; Year
+0080,6,1,1,0		; Month
+0080,7,1,1,0		; Day
+0080,8,1,1,0		; Hour
+0080,9,1,1,0		; Minute
+0080,10,1,1,0		; Second
+;
+; Pitch & Roll and Water Temperature from Variable Leader
+0080,21,-2,0.01,2	; Pitch (Tilt 1) (in degrees)
+0080,23,-2,0.01,2	; Roll (Tilt 2) (in degrees)
+0080,27,2,0.01,2	; Water Temperature (Celsius)
+;
+; Vertical Stage Beam and Pressure from Surface Track   
+4000,3,4,0.0001,3	; Depth (Corrected Surface Track in meters)
+4000,30,4,0.0001,3	; Pressure (uncorrected in meters)
+;
+; Velocity Data (up to 30 cells)
+0100,3,-2,0.001,3	; Vx Cell 1 (m/s)
+0100,5,-2,0.001,3	; Vy Cell 1 (m/s)
+0100,11,-2,0.001,3	; Vx Cell 2 (m/s)
+0100,13,-2,0.001,3	; Vy Cell 2 (m/s)
+0100,19,-2,0.001,3	; Vx Cell 3 (m/s)
+0100,21,-2,0.001,3	; Vy Cell 3 (m/s)
+0100,27,-2,0.001,3	; Vx Cell 4 (m/s)
+0100,29,-2,0.001,3	; Vy Cell 4 (m/s)
+0100,35,-2,0.001,3	; Vx Cell 5 (m/s)
+0100,37,-2,0.001,3	; Vy Cell 5 (m/s)
+0100,43,-2,0.001,3	; Vx Cell 6 (m/s)
+0100,45,-2,0.001,3	; Vy Cell 6 (m/s)
+0100,51,-2,0.001,3	; Vx Cell 7 (m/s)
+0100,53,-2,0.001,3	; Vy Cell 7 (m/s)
+0100,59,-2,0.001,3	; Vx Cell 8 (m/s)
+0100,61,-2,0.001,3	; Vy Cell 8 (m/s)
+0100,67,-2,0.001,3	; Vx Cell 9 (m/s)
+0100,69,-2,0.001,3	; Vy Cell 9 (m/s)
+0100,75,-2,0.001,3	; Vx Cell 10 (m/s)
+0100,77,-2,0.001,3	; Vy Cell 10 (m/s)
+0100,83,-2,0.001,3	; Vx Cell 11 (m/s)
+0100,85,-2,0.001,3	; Vy Cell 11 (m/s)
+0100,91,-2,0.001,3	; Vx Cell 12 (m/s)
+0100,93,-2,0.001,3	; Vy Cell 12 (m/s)
+0100,99,-2,0.001,3	; Vx Cell 13 (m/s)
+0100,101,-2,0.001,3	; Vy Cell 13 (m/s)
+0100,107,-2,0.001,3	; Vx Cell 14 (m/s)
+0100,109,-2,0.001,3	; Vy Cell 14 (m/s)
+0100,115,-2,0.001,3	; Vx Cell 15 (m/s)
+0100,117,-2,0.001,3	; Vy Cell 15 (m/s)
+0100,123,-2,0.001,3	; Vx Cell 16 (m/s)
+0100,125,-2,0.001,3	; Vy Cell 16 (m/s)
+0100,131,-2,0.001,3	; Vx Cell 17 (m/s)
+0100,133,-2,0.001,3	; Vy Cell 17 (m/s)
+0100,139,-2,0.001,3	; Vx Cell 18 (m/s)
+0100,141,-2,0.001,3	; Vy Cell 18 (m/s)
+0100,147,-2,0.001,3	; Vx Cell 19 (m/s)
+0100,149,-2,0.001,3	; Vy Cell 19 (m/s)
+0100,155,-2,0.001,3	; Vx Cell 20 (m/s)
+0100,157,-2,0.001,3	; Vy Cell 20 (m/s)
+0100,163,-2,0.001,3	; Vx Cell 21 (m/s)
+0100,165,-2,0.001,3	; Vy Cell 21 (m/s)
+0100,171,-2,0.001,3	; Vx Cell 22 (m/s)
+0100,173,-2,0.001,3	; Vy Cell 22 (m/s)
+0100,179,-2,0.001,3	; Vx Cell 23 (m/s)
+0100,181,-2,0.001,3	; Vy Cell 23 (m/s)
+0100,187,-2,0.001,3	; Vx Cell 24 (m/s)
+0100,189,-2,0.001,3	; Vy Cell 24 (m/s)
+0100,195,-2,0.001,3	; Vx Cell 25 (m/s)
+0100,197,-2,0.001,3	; Vy Cell 25 (m/s)
+0100,203,-2,0.001,3	; Vx Cell 26 (m/s)
+0100,205,-2,0.001,3	; Vy Cell 26 (m/s)
+0100,211,-2,0.001,3	; Vx Cell 27 (m/s)
+0100,213,-2,0.001,3	; Vy Cell 27 (m/s)
+0100,219,-2,0.001,3	; Vx Cell 28 (m/s)
+0100,221,-2,0.001,3	; Vy Cell 28 (m/s)
+0100,227,-2,0.001,3	; Vx Cell 29 (m/s)
+0100,229,-2,0.001,3	; Vy Cell 29 (m/s)
+0100,235,-2,0.001,3	; Vx Cell 30 (m/s)
+0100,237,-2,0.001,3	; Vy Cell 30 (m/s)
+0100,243,-2,0.001,3	; Vx Cell 31 (m/s)
+0100,245,-2,0.001,3	; Vy Cell 31 (m/s)
+0100,251,-2,0.001,3	; Vx Cell 32 (m/s)
+0100,253,-2,0.001,3	; Vy Cell 32 (m/s)
+0100,259,-2,0.001,3	; Vx Cell 33 (m/s)
+0100,261,-2,0.001,3	; Vy Cell 33 (m/s)
+0100,267,-2,0.001,3	; Vx Cell 34 (m/s)
+0100,269,-2,0.001,3	; Vy Cell 34 (m/s)
+0100,275,-2,0.001,3	; Vx Cell 35 (m/s)
+0100,277,-2,0.001,3	; Vy Cell 35 (m/s)
+0100,283,-2,0.001,3	; Vx Cell 36 (m/s)
+0100,285,-2,0.001,3	; Vy Cell 36 (m/s)
+0100,291,-2,0.001,3	; Vx Cell 37 (m/s)
+0100,293,-2,0.001,3	; Vy Cell 37 (m/s)
+0100,299,-2,0.001,3	; Vx Cell 38 (m/s)
+0100,301,-2,0.001,3	; Vy Cell 38 (m/s)
+0100,307,-2,0.001,3	; Vx Cell 39 (m/s)
+0100,309,-2,0.001,3	; Vy Cell 39 (m/s)
+0100,315,-2,0.001,3	; Vx Cell 40 (m/s)
+0100,317,-2,0.001,3	; Vy Cell 40 (m/s)
+0100,323,-2,0.001,3	; Vx Cell 41 (m/s)
+0100,325,-2,0.001,3	; Vy Cell 41 (m/s)
+0100,331,-2,0.001,3	; Vx Cell 42 (m/s)
+0100,333,-2,0.001,3	; Vy Cell 42 (m/s)
+0100,339,-2,0.001,3	; Vx Cell 43 (m/s)
+0100,341,-2,0.001,3	; Vy Cell 43 (m/s)
+0100,347,-2,0.001,3	; Vx Cell 44 (m/s)
+0100,349,-2,0.001,3	; Vy Cell 44 (m/s)
+0100,355,-2,0.001,3	; Vx Cell 45 (m/s)
+0100,357,-2,0.001,3	; Vy Cell 45 (m/s)
+;
+; This exacts configuration information from the raw ChannelMaster binary file
+; Fixed Leader Decoder File
+0000,55,4		; ChannelMaster Serial Number
+0000,3,1		; CPU F/W Version
+0000,4,1		; CPU F/W Revision
+0000,10,1		; Number of Cells (WN)
+0000,13,2,1		; Depth Cell Length (WS) (cm)
+0000,15,2,1		; Blank After Transmit (WF) (cm)
+0000,33,2,0.01,2	; Distance to center of bin 1 (meters)
+0000,11,2		; Pings Per Ensemble (WP)
+0000,23,1		; Time Per Ping Minutes (TP)
+0000,24,1		; Time Per Ping Seconds (TP)
+0000,25,1		; Time Per Ping Hundredths of Seconds (TP)
+;
+; Surface Track Commands
+4001,5,2		; # of Vertical Pings (VP)
+4001,9,1		; Pressure Screen ON or OFF (#VC 0 "1/0" 25)
+4001,19,2		; Maximum Range of Vertical Beam (#VR) (cm)
+4001,3,2		; Vertical Beam Blank (VF) (cm)
+;
+;  The following produces a CR/LF in the ASCII file
+$L

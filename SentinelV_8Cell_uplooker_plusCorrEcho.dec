@@ -1,0 +1,131 @@
+; This Decoder extracts all pertinent information from the raw binary file
+; Depth (Corrected & uncorrected Surface Track and pressure)
+;
+0080,3,2,1,0,+		; Ensemble Number                           ; Ens
+0080,12,1,65536,0	; Ensemble Number (Most Significant Byte)
+;
+; Date & Time from Variable Leader
+0080,5,1	        ; Real-Time Clock (RTC) Year                ; Year
+0080,6,1	        ; RTC Month                                 ; Month
+0080,7,1	        ; RTC Day                                   ; Day
+0080,8,1	        ; RTC Hour                                  ; Hour
+0080,9,1	        ; RTC Minute                                ; Minute
+0080,10,1	        ; RTC Second                                ; Second
+0080,11,1	        ; RTC Hundredths of Seconds                 ; Hundredths
+;
+; Pitch & Roll and Water Temperature from Variable Leader
+0080,21,-2,0.01,2	; Pitch (Tilt 1) (in degrees)               ; Pitch (deg)
+0080,23,-2,0.01,2	; Roll (Tilt 2) (in degrees)                ; Roll (deg)
+0080,27,2,0.01,2	; Water Temperature (Celsius)               ; Temp (C)
+;
+; Vertical Stage Beam and Pressure from Surface Track   
+0080,17,2,0.1,2	    ; Depth of Transducer (m) (ED)                  ; Depth (m)
+0080,49,-4,0.01,2	; Pressure Sensor Data (KPA)                ; Pressure (KPA)
+;
+; Velocity Data (up to 8 cells)
+; EX-CMD   COORD SYS  VEL 1    VEL 2      VEL 3       VEL 4
+; EX11xxx  EARTH      TO EAST   TO NORTH  TO SURFACE  ERR VEL 
+; Velocity To East
+0100,3,-2,0.001,3	; VEast Cell 1 (m/s)                        ; VE1 (m/s)
+0100,11,-2,0.001,3	; VEast Cell 2 (m/s)                        ; VE2 (m/s)
+0100,19,-2,0.001,3	; VEast Cell 3 (m/s)                        ; VE3 (m/s)
+0100,27,-2,0.001,3	; VEast Cell 4 (m/s)                        ; VE4 (m/s)
+0100,35,-2,0.001,3	; VEast Cell 5 (m/s)                        ; VE5 (m/s)
+0100,43,-2,0.001,3	; VEast Cell 6 (m/s)                        ; VE6 (m/s)
+0100,51,-2,0.001,3	; VEast Cell 7 (m/s)                        ; VE7 (m/s)
+0100,59,-2,0.001,3	; VEast Cell 8 (m/s)                        ; VE8 (m/s)
+0100,5,-2,0.001,3	; VNorth Cell 1 (m/s)                       ; VN1 (m/s)
+0100,13,-2,0.001,3	; VNorth Cell 2 (m/s)                       ; VN2 (m/s)
+0100,21,-2,0.001,3	; VNorth Cell 3 (m/s)                       ; VN3 (m/s)
+0100,29,-2,0.001,3	; VNorth Cell 4 (m/s)                       ; VN4 (m/s)
+0100,37,-2,0.001,3	; VNorth Cell 5 (m/s)                       ; VN5 (m/s)
+0100,45,-2,0.001,3	; VNorth Cell 6 (m/s)                       ; VN6 (m/s)
+0100,53,-2,0.001,3	; VNorth Cell 7 (m/s)                       ; VN7 (m/s)
+0100,61,-2,0.001,3	; VNorth Cell 8 (m/s)                       ; VN8 (m/s)
+0100,7,-2,0.001,3	; VVertical Cell 1 (m/s)                    ; VV1 (m/s)
+0100,15,-2,0.001,3	; VVertical Cell 2 (m/s)                    ; VV2 (m/s)
+0100,23,-2,0.001,3	; VVertical Cell 3 (m/s)                    ; VV3 (m/s)
+0100,31,-2,0.001,3	; VVertical Cell 4 (m/s)                    ; VV4 (m/s)
+0100,39,-2,0.001,3	; VVertical Cell 5 (m/s)                    ; VV5 (m/s)
+0100,47,-2,0.001,3	; VVertical Cell 6 (m/s)                    ; VV6 (m/s)
+0100,55,-2,0.001,3	; VVertical Cell 7 (m/s)                    ; VV7 (m/s)
+0100,63,-2,0.001,3	; VVertical Cell 8 (m/s)                    ; VV8 (m/s)
+0100,9,-2,0.001,3	; VErr Cell 1 (m/s)                         ; VErr1 (m/s)
+0100,17,-2,0.001,3	; VErr Cell 2 (m/s)                         ; VErr2 (m/s)
+0100,25,-2,0.001,3	; VErr Cell 3 (m/s)                         ; VErr3 (m/s)
+0100,33,-2,0.001,3	; VErr Cell 4 (m/s)                         ; VErr4 (m/s)
+0100,41,-2,0.001,3	; VErr Cell 5 (m/s)                         ; VErr5 (m/s)
+0100,49,-2,0.001,3	; VErr Cell 6 (m/s)                         ; VErr6 (m/s)
+0100,57,-2,0.001,3	; VErr Cell 7 (m/s)                         ; VErr7 (m/s)
+0100,65,-2,0.001,3	; VErr Cell 8 (m/s)                         ; VErr8 (m/s)
+;
+; Velocity Data - Correlation
+0200,3,1,1,0        ; Correlation Beam 1 Cell 1                 ; Corr11
+0200,7,1,1,0        ; Correlation Beam 1 Cell 2                 ; Corr12
+0200,11,1,1,0       ; Correlation Beam 1 Cell 3                 ; Corr13
+0200,15,1,1,0       ; Correlation Beam 1 Cell 4                 ; Corr14
+0200,19,1,1,0       ; Correlation Beam 1 Cell 5                 ; Corr15
+0200,23,1,1,0       ; Correlation Beam 1 Cell 6                 ; Corr16
+0200,27,1,1,0       ; Correlation Beam 1 Cell 7                 ; Corr17
+0200,31,1,1,0       ; Correlation Beam 1 Cell 8                 ; Corr18
+0200,4,1,1,0        ; Correlation Beam 2 Cell 1                 ; Corr21
+0200,8,1,1,0        ; Correlation Beam 2 Cell 2                 ; Corr22
+0200,12,1,1,0       ; Correlation Beam 2 Cell 3                 ; Corr23
+0200,16,1,1,0       ; Correlation Beam 2 Cell 4                 ; Corr24
+0200,20,1,1,0       ; Correlation Beam 2 Cell 5                 ; Corr25
+0200,24,1,1,0       ; Correlation Beam 2 Cell 6                 ; Corr26
+0200,28,1,1,0       ; Correlation Beam 2 Cell 7                 ; Corr27
+0200,32,1,1,0       ; Correlation Beam 2 Cell 8                 ; Corr28
+0200,5,1,1,0        ; Correlation Beam 3 Cell 1                 ; Corr31
+0200,9,1,1,0        ; Correlation Beam 3 Cell 2                 ; Corr32
+0200,13,1,1,0       ; Correlation Beam 3 Cell 3                 ; Corr33
+0200,17,1,1,0       ; Correlation Beam 3 Cell 4                 ; Corr34
+0200,21,1,1,0       ; Correlation Beam 3 Cell 5                 ; Corr35
+0200,25,1,1,0       ; Correlation Beam 3 Cell 6                 ; Corr36
+0200,29,1,1,0       ; Correlation Beam 3 Cell 7                 ; Corr37
+0200,33,1,1,0       ; Correlation Beam 3 Cell 8                 ; Corr38
+0200,6,1,1,0        ; Correlation Beam 4 Cell 1                 ; Corr41
+0200,10,1,1,0       ; Correlation Beam 4 Cell 2                 ; Corr42
+0200,14,1,1,0       ; Correlation Beam 4 Cell 3                 ; Corr43
+0200,18,1,1,0       ; Correlation Beam 4 Cell 4                 ; Corr44
+0200,22,1,1,0       ; Correlation Beam 4 Cell 5                 ; Corr45
+0200,26,1,1,0       ; Correlation Beam 4 Cell 6                 ; Corr46
+0200,30,1,1,0       ; Correlation Beam 4 Cell 7                 ; Corr47
+0200,34,1,1,0       ; Correlation Beam 4 Cell 8                 ; Corr48
+;
+; Velocity Data - Echo Intensity
+0300,3,1,1,0        ; Echo Intensity Beam 1 Cell 1              ; Echo11
+0300,7,1,1,0        ; Echo Intensity Beam 1 Cell 2              ; Echo12
+0300,11,1,1,0       ; Echo Intensity Beam 1 Cell 3              ; Echo13
+0300,15,1,1,0       ; Echo Intensity Beam 1 Cell 4              ; Echo14
+0300,19,1,1,0       ; Echo Intensity Beam 1 Cell 5              ; Echo15
+0300,23,1,1,0       ; Echo Intensity Beam 1 Cell 6              ; Echo16
+0300,27,1,1,0       ; Echo Intensity Beam 1 Cell 7              ; Echo17
+0300,31,1,1,0       ; Echo Intensity Beam 1 Cell 8              ; Echo18
+0300,4,1,1,0        ; Echo Intensity Beam 2 Cell 1              ; Echo21
+0300,8,1,1,0        ; Echo Intensity Beam 2 Cell 2              ; Echo22
+0300,12,1,1,0       ; Echo Intensity Beam 2 Cell 3              ; Echo23
+0300,16,1,1,0       ; Echo Intensity Beam 2 Cell 4              ; Echo24
+0300,20,1,1,0       ; Echo Intensity Beam 2 Cell 5              ; Echo25
+0300,24,1,1,0       ; Echo Intensity Beam 2 Cell 6              ; Echo26
+0300,28,1,1,0       ; Echo Intensity Beam 2 Cell 7              ; Echo27
+0300,32,1,1,0       ; Echo Intensity Beam 2 Cell 8              ; Echo28
+0300,5,1,1,0        ; Echo Intensity Beam 3 Cell 1              ; Echo31
+0300,9,1,1,0        ; Echo Intensity Beam 3 Cell 2              ; Echo32
+0300,13,1,1,0       ; Echo Intensity Beam 3 Cell 3              ; Echo33
+0300,17,1,1,0       ; Echo Intensity Beam 3 Cell 4              ; Echo34
+0300,21,1,1,0       ; Echo Intensity Beam 3 Cell 5              ; Echo35
+0300,25,1,1,0       ; Echo Intensity Beam 3 Cell 6              ; Echo36
+0300,29,1,1,0       ; Echo Intensity Beam 3 Cell 7              ; Echo37
+0300,33,1,1,0       ; Echo Intensity Beam 3 Cell 8              ; Echo38
+0300,6,1,1,0        ; Echo Intensity Beam 4 Cell 1              ; Echo41
+0300,10,1,1,0       ; Echo Intensity Beam 4 Cell 2              ; Echo42
+0300,14,1,1,0       ; Echo Intensity Beam 4 Cell 3              ; Echo43
+0300,18,1,1,0       ; Echo Intensity Beam 4 Cell 4              ; Echo44
+0300,22,1,1,0       ; Echo Intensity Beam 4 Cell 5              ; Echo45
+0300,26,1,1,0       ; Echo Intensity Beam 4 Cell 6              ; Echo46
+0300,30,1,1,0       ; Echo Intensity Beam 4 Cell 7              ; Echo47
+0300,34,1,1,0       ; Echo Intensity Beam 4 Cell 8              ; Echo48
+;
+;  The following produces a CR/LF in the ASCII file
+$L

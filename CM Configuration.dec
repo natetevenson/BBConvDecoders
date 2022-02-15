@@ -1,0 +1,23 @@
+; This file exacts configuration information from the raw ChannelMaster binary file
+;
+; Fixed Leader Decoder File
+0000,55,4		; ChannelMaster Serial Number
+0000,3,1		; CPU F/W Version
+0000,4,1		; CPU F/W Revision
+0000,10,1		; Number of Cells (WN)
+0000,13,2,1		; Depth Cell Length (WS) (cm)
+0000,15,2,1		; Blank After Transmit (WF) (cm)
+0000,33,2,0.01,2	; Distance to center of bin 1 (meters)
+0000,11,2		; Pings Per Ensemble (WP)
+0000,23,1		; Time Per Ping Minutes (TP)
+0000,24,1		; Time Per Ping Seconds (TP)
+0000,25,1		; Time Per Ping Hundredths of Seconds (TP)
+;
+; Surface Track Commands
+4001,5,2		; # of Vertical Pings (VP)
+4001,9,1		; Pressure Screen ON or OFF (#VC 0 "1/0" 25)
+4001,19,2		; Maximum Range of Vertical Beam (#VR) (cm)
+4001,3,2		; Vertical Beam Blank (VF) (cm)
+;
+;  The following produces a CR/LF in the ASCII file
+$L

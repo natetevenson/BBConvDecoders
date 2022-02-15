@@ -1,0 +1,27 @@
+; Depth (Corrected & uncorrected Surface Track and pressure)
+; 
+0080,3,2,1,0,+		;Ensemble Number
+0080,12,1,65536,0	;Ensemble Number (Most Significant Byte)
+0080,5,1,1,0		;Year
+0080,6,1,1,0		;Month
+0080,7,1,1,0		;Day
+0080,8,1,1,0		;Hour
+0080,9,1,1,0		;Minute
+0080,10,1,1,0		;Second
+;  
+4000,3,4,0.0001,3		;Depth (Corrected Surface Track)
+4000,7,4,0.0001,3		;Depth (Uncorrected Surface Track)
+4000,11,1,1,0			;Evaluation Amplitude (counts)
+4000,12,1,1,0			;Surface Amplitude (counts)
+4000,13,1,1,2			;% Good Surface Track Pings
+4000,14,4,0.0001,3		;STD Surface Track
+4000,18,4,0.0001,3		;Min.Surface Track Depth
+4000,22,4,0.0001,3		;Max.Surface Track Depth
+4000,26,4,0.0001,3		;Diff. Pressure Depth - Vert. Beam Depth
+4000,30,4,0.0001,3		;Pressure (uncorrected)
+4000,34,1,1,2			;% Good Depth based on Corr. Pressure
+4000,35,4,0.0001,3		;STD Depth based on Corr. Pressure
+4000,39,4,0.0001,3		;Min. Depth of Corr. Pressure
+4000,43,4,0.0001,3		;Max. Depth of Corr. Pressure
+;
+$L
