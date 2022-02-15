@@ -1,6 +1,11 @@
-; This Decoder extracts all pertinent information from the raw binary file
-; Depth (Corrected & uncorrected Surface Track and pressure)
+; This Decoder extracts information from the raw binary file (.pd0)
+; from a SentinelV for evaluating channel velocities.
 ;
+;The following line can be used to fill the CSV headings
+;Ens,Year,Month,Day,Hour,Minute,Second,Hundredths,Batt (V),Heading (deg),Pitch (deg),Roll (deg),Temp (C),Depth (m),Pressure (KPA),VE1 (m/s),VE2 (m/s),VE3 (m/s),VE4 (m/s),VE5 (m/s),VE6 (m/s),VE7 (m/s),VE8 (m/s),VN1 (m/s),VN2 (m/s),VN3 (m/s),VN4 (m/s),VN5 (m/s),VN6 (m/s),VN7 (m/s),VN8 (m/s),VN1 (m/s),VN2 (m/s),VN3 (m/s),VN4 (m/s),VN5 (m/s),VN6 (m/s),VN7 (m/s),VN8 (m/s),VErr1 (m/s),VErr2 (m/s),VErr3 (m/s),VErr4 (m/s),VErr5 (m/s),VErr6 (m/s),VErr7 (m/s),VErr8 (m/s),Corr11,Corr12,Corr13,Corr14,Corr15,Corr16,Corr17,Corr18,Corr21,Corr22,Corr23,Corr24,Corr25,Corr26,Corr27,Corr28,Corr31,Corr32,Corr33,Corr34,Corr35,Corr36,Corr37,Corr38,Corr41,Corr42,Corr43,Corr44,Corr45,Corr46,Corr47,Corr48,Echo11,Echo12,Echo13,Echo14,Echo15,Echo16,Echo17,Echo18,Echo21,Echo22,Echo23,Echo24,Echo25,Echo26,Echo27,Echo28,Echo31,Echo32,Echo33,Echo34,Echo35,Echo36,Echo37,Echo38,Echo41,Echo42,Echo43,Echo44,Echo45,Echo46,Echo47,Echo48
+
+;
+;Binary Convertion      ; Description                               ; CSV Headings
 0080,3,2,1,0,+		; Ensemble Number                           ; Ens
 0080,12,1,65536,0	; Ensemble Number (Most Significant Byte)
 ;
@@ -23,45 +28,42 @@
 0080,27,2,0.01,2	; Water Temperature (Celsius)               ; Temp (C)
 ;
 ; Vertical Stage Beam and Pressure from Surface Track   
-0080,17,2,0.1,2	    ; Depth of Transducer (m) (ED)            ; Depth (m)
+0080,17,2,0.1,2	    ; Depth of Transducer (m) (ED)                  ; Depth (m)
 0080,49,-4,0.01,2	  ; Pressure Sensor Data (KPA)              ; Pressure (KPA)
 ;
-; Velocity Data (up to 8 cells)
-; EX-CMD   COORD SYS  VEL 1    VEL 2      VEL 3       VEL 4
-; EX11xxx  EARTH      TO EAST   TO NORTH  TO SURFACE  ERR VEL 
-; Velocity To East
+; Velocity Data (up to 8 cells)- EXCMD set to EX11xxx - Earth Coord
 0100,3,-2,0.001,3	; VEast Cell 1 (m/s)                        ; VE1 (m/s)
-0100,11,-2,0.001,3	; VEast Cell 2 (m/s)                      ; VE2 (m/s)
-0100,19,-2,0.001,3	; VEast Cell 3 (m/s)                      ; VE3 (m/s)
-0100,27,-2,0.001,3	; VEast Cell 4 (m/s)                      ; VE4 (m/s)
-0100,35,-2,0.001,3	; VEast Cell 5 (m/s)                      ; VE5 (m/s)
-0100,43,-2,0.001,3	; VEast Cell 6 (m/s)                      ; VE6 (m/s)
-0100,51,-2,0.001,3	; VEast Cell 7 (m/s)                      ; VE7 (m/s)
-0100,59,-2,0.001,3	; VEast Cell 8 (m/s)                      ; VE8 (m/s)
+0100,11,-2,0.001,3	; VEast Cell 2 (m/s)                        ; VE2 (m/s)
+0100,19,-2,0.001,3	; VEast Cell 3 (m/s)                        ; VE3 (m/s)
+0100,27,-2,0.001,3	; VEast Cell 4 (m/s)                        ; VE4 (m/s)
+0100,35,-2,0.001,3	; VEast Cell 5 (m/s)                        ; VE5 (m/s)
+0100,43,-2,0.001,3	; VEast Cell 6 (m/s)                        ; VE6 (m/s)
+0100,51,-2,0.001,3	; VEast Cell 7 (m/s)                        ; VE7 (m/s)
+0100,59,-2,0.001,3	; VEast Cell 8 (m/s)                        ; VE8 (m/s)
 0100,5,-2,0.001,3	; VNorth Cell 1 (m/s)                       ; VN1 (m/s)
-0100,13,-2,0.001,3	; VNorth Cell 2 (m/s)                     ; VN2 (m/s)
-0100,21,-2,0.001,3	; VNorth Cell 3 (m/s)                     ; VN3 (m/s)
-0100,29,-2,0.001,3	; VNorth Cell 4 (m/s)                     ; VN4 (m/s)
-0100,37,-2,0.001,3	; VNorth Cell 5 (m/s)                     ; VN5 (m/s)
-0100,45,-2,0.001,3	; VNorth Cell 6 (m/s)                     ; VN6 (m/s)
-0100,53,-2,0.001,3	; VNorth Cell 7 (m/s)                     ; VN7 (m/s)
-0100,61,-2,0.001,3	; VNorth Cell 8 (m/s)                     ; VN8 (m/s)
+0100,13,-2,0.001,3	; VNorth Cell 2 (m/s)                       ; VN2 (m/s)
+0100,21,-2,0.001,3	; VNorth Cell 3 (m/s)                       ; VN3 (m/s)
+0100,29,-2,0.001,3	; VNorth Cell 4 (m/s)                       ; VN4 (m/s)
+0100,37,-2,0.001,3	; VNorth Cell 5 (m/s)                       ; VN5 (m/s)
+0100,45,-2,0.001,3	; VNorth Cell 6 (m/s)                       ; VN6 (m/s)
+0100,53,-2,0.001,3	; VNorth Cell 7 (m/s)                       ; VN7 (m/s)
+0100,61,-2,0.001,3	; VNorth Cell 8 (m/s)                       ; VN8 (m/s)
 0100,7,-2,0.001,3	; VVertical Cell 1 (m/s)                    ; VV1 (m/s)
-0100,15,-2,0.001,3	; VVertical Cell 2 (m/s)                  ; VV2 (m/s)
-0100,23,-2,0.001,3	; VVertical Cell 3 (m/s)                  ; VV3 (m/s)
-0100,31,-2,0.001,3	; VVertical Cell 4 (m/s)                  ; VV4 (m/s)
-0100,39,-2,0.001,3	; VVertical Cell 5 (m/s)                  ; VV5 (m/s)
-0100,47,-2,0.001,3	; VVertical Cell 6 (m/s)                  ; VV6 (m/s)
-0100,55,-2,0.001,3	; VVertical Cell 7 (m/s)                  ; VV7 (m/s)
-0100,63,-2,0.001,3	; VVertical Cell 8 (m/s)                  ; VV8 (m/s)
+0100,15,-2,0.001,3	; VVertical Cell 2 (m/s)                    ; VV2 (m/s)
+0100,23,-2,0.001,3	; VVertical Cell 3 (m/s)                    ; VV3 (m/s)
+0100,31,-2,0.001,3	; VVertical Cell 4 (m/s)                    ; VV4 (m/s)
+0100,39,-2,0.001,3	; VVertical Cell 5 (m/s)                    ; VV5 (m/s)
+0100,47,-2,0.001,3	; VVertical Cell 6 (m/s)                    ; VV6 (m/s)
+0100,55,-2,0.001,3	; VVertical Cell 7 (m/s)                    ; VV7 (m/s)
+0100,63,-2,0.001,3	; VVertical Cell 8 (m/s)                    ; VV8 (m/s)
 0100,9,-2,0.001,3	; VErr Cell 1 (m/s)                         ; VErr1 (m/s)
-0100,17,-2,0.001,3	; VErr Cell 2 (m/s)                       ; VErr2 (m/s)
-0100,25,-2,0.001,3	; VErr Cell 3 (m/s)                       ; VErr3 (m/s)
-0100,33,-2,0.001,3	; VErr Cell 4 (m/s)                       ; VErr4 (m/s)
-0100,41,-2,0.001,3	; VErr Cell 5 (m/s)                       ; VErr5 (m/s)
-0100,49,-2,0.001,3	; VErr Cell 6 (m/s)                       ; VErr6 (m/s)
-0100,57,-2,0.001,3	; VErr Cell 7 (m/s)                       ; VErr7 (m/s)
-0100,65,-2,0.001,3	; VErr Cell 8 (m/s)                       ; VErr8 (m/s)
+0100,17,-2,0.001,3	; VErr Cell 2 (m/s)                         ; VErr2 (m/s)
+0100,25,-2,0.001,3	; VErr Cell 3 (m/s)                         ; VErr3 (m/s)
+0100,33,-2,0.001,3	; VErr Cell 4 (m/s)                         ; VErr4 (m/s)
+0100,41,-2,0.001,3	; VErr Cell 5 (m/s)                         ; VErr5 (m/s)
+0100,49,-2,0.001,3	; VErr Cell 6 (m/s)                         ; VErr6 (m/s)
+0100,57,-2,0.001,3	; VErr Cell 7 (m/s)                         ; VErr7 (m/s)
+0100,65,-2,0.001,3	; VErr Cell 8 (m/s)                         ; VErr8 (m/s)
 ;
 ; Velocity Data - Correlation
 0200,3,1,1,0        ; Correlation Beam 1 Cell 1               ; Corr11
