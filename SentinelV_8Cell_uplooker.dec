@@ -19,7 +19,7 @@
 0080,11,1	        ; RTC Hundredths of Seconds                 ; Hundredths
 ;
 ;Battery Voltage
-0080,36,1	        ; Battery Voltage 0.1 volts                 ; Batt (V)
+0080,36,0.1,1	        ; Battery Voltage 0.1 volts                 ; Batt (V)
 ;
 ; Pitch & Roll and Water Temperature from Variable Leader
 0080,19,2,0.01,2	; Heading (in degrees)                      ; Heading (deg)
